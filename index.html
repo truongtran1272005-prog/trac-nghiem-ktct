@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ôn tập trắc nghiệm Kinh tế chính trị</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+
+  <!-- Nút chuyển giao diện Sáng/Tối -->
+  <button id="theme-toggle" class="theme-btn">🌙</button>
+
+  <div class="container">
+    
+    <!-- TRANG CHỦ -->
+    <div id="home-view">
+      <div class="header">
+        <span class="badge">🎓 Ôn tập trắc nghiệm</span>
+        <h1>Kinh tế chính trị Mác - Lênin</h1>
+        <p>Chọn một học phần để bắt đầu làm bài.</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card" onclick="startQuiz('ktct.json', 'Kinh tế chính trị Mác - Lênin')">
+          <div class="card-number">1</div>
+          <h2>Kinh tế chính trị</h2>
+          <p>Mác - Lênin • 32 câu trắc nghiệm</p>
+          <div class="btn-link">Vào làm bài ➔</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRANG LÀM BÀI -->
+    <div id="quiz-view" class="hidden">
+      <button onclick="goHome()" class="back-btn">⬅ Trang chủ</button>
+      <h2 id="quiz-title">Tên môn học</h2>
+      
+      <div class="quiz-box">
+        <div class="quiz-progress" id="quiz-progress">Câu hỏi 1/32 • Đúng: 0 câu</div>
+        <h3 id="question-text">Đang tải câu hỏi...</h3>
+        <div id="options-container" class="options-container"></div>
+        
+        <div class="quiz-actions">
+          <button id="next-btn" onclick="nextQuestion()" class="action-btn">Câu tiếp theo ➔</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRANG KẾT QUẢ / CHẤM ĐIỂM -->
+    <div id="result-view" class="hidden">
+      <div class="quiz-box text-center">
+        <h2>🎉 Hoàn thành bài thi!</h2>
+        <div class="score-card">
+          <div class="score-num" id="final-score">0 / 10 điểm</div>
+          <p id="score-details">Bạn trả lời đúng 0/0 câu hỏi</p>
+          <p id="score-percentage" class="score-percentage">Tỷ lệ chính xác: 0%</p>
+        </div>
+        <div class="result-actions">
+          <button onclick="restartQuiz()" class="action-btn">🔄 Làm lại bài</button>
+          <button onclick="goHome()" class="back-btn">🏠 Trang chủ</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
